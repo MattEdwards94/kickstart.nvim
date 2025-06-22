@@ -84,7 +84,7 @@ return {
     vim.keymap.set('n', '<leader>fb', fzf.buffers, { desc = 'Fuzzy find buffers' })
     vim.keymap.set('n', '<leader>fh', fzf.oldfiles, { desc = 'Fuzzy find history' })
     vim.keymap.set('n', '<leader>fl', fzf.lines, { desc = 'Fuzzy find lines in current buffer' })
-    vim.keymap.set('n', '<leader>ft', fzf.builtin_tags, { desc = 'Fuzzy find tags' })
+    -- vim.keymap.set('n', '<leader>ft', fzf.builtin_tags, { desc = 'Fuzzy find tags' })
     vim.keymap.set('n', '<leader>fGf', fzf.git_files, { desc = 'Git files' })
     vim.keymap.set('n', '<leader>fGs', fzf.git_status, { desc = 'Git status' })
     vim.keymap.set('n', '<leader>fGc', fzf.git_commits, { desc = 'Git commits' })
