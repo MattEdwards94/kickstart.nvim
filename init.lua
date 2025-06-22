@@ -296,6 +296,10 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'NMAC427/guess-indent.nvim',
+  -- auto save files
+  'Pocco81/auto-save.nvim',
+  -- Allow bookmarking lines of code more easily
+  'MattesGroeger/vim-bookmarks',
 
   -- Adds git related signs to the gutter, as well as utilities for managing changes
   {
@@ -420,6 +424,7 @@ require('lazy').setup({
       },
     },
   },
+
   -- Fuzzy Finder (files, lsp, etc)
   {
     'nvim-telescope/telescope.nvim',
@@ -535,6 +540,8 @@ require('lazy').setup({
       library = {
         -- Load luvit types when the `vim.uv` word is found
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+        { path = 'snacks.nvim', words = { 'Snacks' } },
+        { path = 'lazy.nvim', words = { 'LazyVim' } },
       },
     },
   },
@@ -942,7 +949,8 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  { -- Collection of various small independent plugins/modules
+  -- mini.nvim - Collection of various small independent plugins/modules
+  {
     'echasnovski/mini.nvim',
     config = function()
       -- Better Around/Inside textobjects
@@ -979,6 +987,7 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
+
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
