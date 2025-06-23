@@ -9,7 +9,6 @@ vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 vim.opt.rtp:prepend(vim.fn.stdpath 'data' .. '/lua')
 
 require 'options'
-require 'keymaps'
 
 -- ========================= [[ Basic Autocommands ]] ========================= --
 --  See `:help lua-guide-autocommans`
@@ -53,7 +52,6 @@ vim.opt.rtp:prepend(vim.fn.stdpath 'data' .. '/lua')
 require('lazy').setup({
 
   { import = 'plugins' },
-
 
   -- Detect tabstop and shiftwidth automatically
   'NMAC427/guess-indent.nvim',
@@ -188,6 +186,8 @@ require('lazy').setup({
     },
   },
 })
+
+require 'keymaps'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

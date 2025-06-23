@@ -133,3 +133,18 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- toggle option
+require("snacks")
+Snacks.toggle.option('spell', { name = 'Spelling' }):map '<leader>us'
+Snacks.toggle.option('wrap', { name = 'Wrap' }):map '<leader>uw'
+Snacks.toggle.option('relativenumber', { name = 'Relative Number' }):map '<leader>uL'
+Snacks.toggle.diagnostics():map '<leader>ud'
+Snacks.toggle.line_number():map '<leader>ul'
+Snacks.toggle.animate():map '<leader>ua'
+Snacks.toggle.indent():map '<leader>ug'
+Snacks.toggle.scroll():map '<leader>uS'
+
+if vim.lsp.inlay_hint then
+  Snacks.toggle.inlay_hints():map '<leader>uh'
+end
