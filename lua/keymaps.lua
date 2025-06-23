@@ -88,12 +88,12 @@ vim.keymap.set('v', '<A-k>', ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<c
 vim.keymap.set('n', '[b', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
 vim.keymap.set('n', ']b', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
 vim.keymap.set('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
--- vim.keymap.set("n", "<leader>bd", function()
---   Snacks.bufdelete()
--- end, { desc = "Delete Buffer" })
--- vim.keymap.set("n", "<leader>bo", function()
---   Snacks.bufdelete.other()
--- end, { desc = "Delete Other Buffers" })
+vim.keymap.set("n", "<leader>bd", function()
+  Snacks.bufdelete()
+end, { desc = "Delete Buffer" })
+vim.keymap.set("n", "<leader>bo", function()
+  Snacks.bufdelete.other()
+end, { desc = "Delete Other Buffers" })
 
 -- saner-behavior-of-n-and-N
 vim.keymap.set('n', 'n', "'Nn'[v:searchforward].'zv'", { expr = true, desc = 'Next Search Result' })
