@@ -91,6 +91,7 @@ return {
         vim.keymap.set('n', '<leader>fGc', fzf.git_commits, { desc = 'Git commits' })
         vim.keymap.set('n', '<leader>fGb', fzf.git_bcommits, { desc = 'Git buffer commits' })
         vim.keymap.set('n', '<leader>fGv', fzf.git_branches, { desc = 'Git branches' })
+        vim.keymap.set('n', '<leader>sA', function() require('utils.fzf_custom').live_grep_in_selected_dir() end, { desc = 'Search All' })
 
         print 'fzf-lua configuration loaded!'
     end,
