@@ -31,7 +31,6 @@ return {
   },
   opts = {
     sources = {
-      compat = {},
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
     keymap = {
