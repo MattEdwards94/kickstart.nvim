@@ -1,4 +1,5 @@
 -- =============== [[ Basic Keymaps ]] =============== --
+require("snacks")
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -65,8 +66,8 @@ vim.keymap.set({ 'n', 'v' }, '<leader>aa', '<cmd>CodeCompanionActions<CR>', { de
 vim.keymap.set('v', '<leader>aca', '<cmd>CodeCompanionChat Add<CR>', { desc = '[CodeCompanion] Add to chat' })
 
 -- Terminal keymaps
---vim.keymap.set("n", "<c-/>", function() Snacks.terminal() end, { desc = "Terminal (Root Dir)" })
---vim.keymap.set("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+vim.keymap.set("n", "<C-t>", function() Snacks.terminal() end, { desc = "Terminal (Root Dir)" })
+vim.keymap.set("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 vim.keymap.set('t', '<C-space>', '<C-\\><C-n><C-w>p', { desc = 'Switch back to last buffer from terminal' })
 
 -- Resize window using <ctrl> arrow keys
@@ -135,7 +136,6 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- toggle option
-require("snacks")
 Snacks.toggle.option('spell', { name = 'Spelling' }):map '<leader>us'
 Snacks.toggle.option('wrap', { name = 'Wrap' }):map '<leader>uw'
 Snacks.toggle.option('relativenumber', { name = 'Relative Number' }):map '<leader>uL'
