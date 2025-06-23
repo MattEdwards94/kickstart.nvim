@@ -60,10 +60,6 @@ require('lazy').setup({
   -- Allow bookmarking lines of code more easily
   'MattesGroeger/vim-bookmarks',
 
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-
-
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
