@@ -96,10 +96,9 @@ return {
         vim.keymap.set('n', '<leader>fGb', fzf.git_bcommits, { desc = 'Git buffer commits' })
         vim.keymap.set('n', '<leader>fGv', fzf.git_branches, { desc = 'Git branches' })
 
-
-
+        vim.keymap.set('n', '<leader>sk', fzf.keymaps, { desc = 'Keymaps' })
         vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = 'Live Grep' })
-        vim.keymap.set('n', '<leader>fb', fzf.buffers, { desc = 'Fuzzy find buffers' })
+        vim.keymap.set('n', '<leader>,', fzf.buffers, { desc = 'Fuzzy find buffers' })
         vim.keymap.set('n', '<leader>fh', fzf.oldfiles, { desc = 'Fuzzy find history' })
         vim.keymap.set('n', '<leader>fl', fzf.lines, { desc = 'Fuzzy find lines in current buffer' })
         -- vim.keymap.set('n', '<leader>ft', fzf.builtin_tags, { desc = 'Fuzzy find tags' })
