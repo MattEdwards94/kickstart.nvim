@@ -74,7 +74,7 @@ too - it's ignored in the kickstart repo to make maintenance easier, but it's
 <details><summary> Linux and Mac </summary>
 
 ```sh
-git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone https://github.com/MattEdwards94/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim-kickstart
 ```
 
 </details>
@@ -239,3 +239,10 @@ sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 </details>
 
+## Updating neovim
+
+1. Navigate to the releases page under neovim
+2. Download the tarball for the relevant release.
+3. Extract tarball in the /opt dir (or run `which nvim` to find where the current is installed)
+4. Update any paths if necessary
+5. nvim --version to check 
