@@ -47,18 +47,14 @@ return {
 
                 map('gs', function() require('fzf-lua').lsp_document_symbols() end, 'Fuzzy find symbols in document')
 
-                -- Fuzzy find all the symbols in your current document.
-                --  Symbols are things like variables, functions, types, etc.
-                -- map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
-
                 -- Fuzzy find all the symbols in your current workspace.
                 --  Similar to document symbols, except searches over your entire project.
-                -- map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
+                map('gS', function() require('fzf-lua').lsp_dynamic_workspace_symbols() end, 'Open Workspace Symbols')
 
                 -- Jump to the type of the word under your cursor.
                 --  Useful when you're not sure what type a variable is and you want to see
                 --  the definition of its *type*, not where it was *defined*.
-                -- map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
+                map('gt', function() require('fzf-lua').lsp_type_definitions() end, 'type definition')
 
                 -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
                 ---@param client vim.lsp.Client
