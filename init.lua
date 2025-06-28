@@ -55,8 +55,6 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'NMAC427/guess-indent.nvim',
-  -- auto save files
-  'Pocco81/auto-save.nvim',
   -- Allow bookmarking lines of code more easily
   'MattesGroeger/vim-bookmarks',
 
