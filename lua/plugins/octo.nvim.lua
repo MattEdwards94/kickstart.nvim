@@ -10,5 +10,10 @@ return {
         require('octo').setup({
             picker = "fzf-lua",
         })
-    end
+    end,
+    keys = {
+        {"<leader>oil", ":Octo issue list<CR>", desc = "List issues"},
+        {"<leader>opl", ":Octo pr list<CR>", desc = "List PRs"},
+        {"<leader>ors", ":Octo review start<CR>", desc = "Open review"},
+    }
 }
