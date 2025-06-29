@@ -95,6 +95,7 @@ return {
         vim.keymap.set('n', '<leader>fGc', fzf.git_commits, { desc = 'Git commits' })
         vim.keymap.set('n', '<leader>fGb', fzf.git_bcommits, { desc = 'Git buffer commits' })
         vim.keymap.set('n', '<leader>fGv', fzf.git_branches, { desc = 'Git branches' })
+        vim.keymap.set('n', '<leader>fc', function() fzf.files({ cwd = vim.fn.stdpath("config")}) end, { desc = 'Config files' })
 
         vim.keymap.set('n', '<leader>sk', fzf.keymaps, { desc = 'Keymaps' })
         vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = 'Live Grep' })
