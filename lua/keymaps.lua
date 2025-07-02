@@ -113,7 +113,7 @@ vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
 --new file
-vim.keymap.set('n', '<leader>fn', '<cmd>enew<cr>', { desc = 'New File' })
+vim.keymap.set('n', '<C-n>', '<cmd>enew<cr>', { desc = 'New File' })
 
 -- quit
 vim.keymap.set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })

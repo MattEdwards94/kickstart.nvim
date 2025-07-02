@@ -93,7 +93,8 @@ return {
         -- Keymaps for finding files or things
         vim.keymap.set('n', '<leader>ff', fzf.files, { desc = 'Fuzzy find files' })
         vim.keymap.set('n', '<leader>fc', function() fzf.files({ cwd = vim.fn.stdpath("config")}) end, { desc = 'Config files' })
-
+        vim.keymap.set('n', '<leader>fn', function() require('fzf-lua').files({ cwd = vim.fn.expand('~/notes') }) end, { desc = 'Find files in notes' })
+        vim.keymap.set('n', '<leader>fA', function() require('fzf-lua').files({ cwd = vim.fn.expand('~') }) end, { desc = 'Find files under ~' })
 
         -- keymaps for searching within something
         vim.keymap.set('n', '<leader>sw', fzf.grep_cword, { desc = 'Search for word or selection in cwd' })
@@ -101,6 +102,8 @@ return {
         vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = 'Live grep cwd' })
         vim.keymap.set('n', '<leader>sh', fzf.manpages, { desc = 'Search help pages' })
         vim.keymap.set('n', '<leader>sd', function() require('utils.fzf_custom').live_grep_in_selected_dir() end, { desc = 'Search specific dir' })
+        vim.keymap.set('n', '<leader>sn', function() require('fzf-lua').live_grep({ cwd = vim.fn.expand('~/notes') }) end, { desc = 'Grep in notes' })
+        vim.keymap.set('n', '<leader>sA', function() require('fzf-lua').live_grep({ cwd = vim.fn.expand('~') }) end, { desc = 'Grep within all files under ~' })
 
         -- misc
         vim.keymap.set('n', '<leader>sr', fzf.resume, { desc = 'Resume previous search' })
