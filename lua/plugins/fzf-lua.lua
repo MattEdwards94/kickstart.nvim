@@ -14,7 +14,7 @@ return {
                 border_chars = { '─', '│', '╭', '╮', '╯', '╰', '┤', '├' },
                 previewer = 'builtin',
                 preview_height = '50%',
-                preview_layout = 'vertical',
+                preview_layout = 'horizontal',
                 wrap_preview = true,
                 bindings = {
                     ['<C-f>'] = 'half-page-down',
@@ -40,17 +40,9 @@ return {
             files = {
                 prompt = '󰈔 Files > ',
                 cwd_prompt = true,
-                actions = {
-                    ["alt-i"] = { fzf.actions.toggle_ignore },
-                    ["alt-h"] = { fzf.actions.toggle_hidden },
-                },
             },
             live_grep = {
                 prompt = '󰈸 Grep > ',
-                actions = {
-                    ["alt-i"] = { fzf.actions.toggle_ignore },
-                    ["alt-h"] = { fzf.actions.toggle_hidden },
-                },
             },
             buffers = {
                 prompt = '󰋋 Buffers > ',
@@ -84,6 +76,9 @@ return {
                 ['ctrl-t'] = require('fzf-lua.actions').file_tabedit,
                 ['ctrl-x'] = require('fzf-lua.actions').file_edit_or_qf,
                 ['ctrl-q'] = require('fzf-lua.actions').file_qf,
+                ["alt-i"] = require('fzf-lua.actions').toggle_ignore,
+                ["alt-h"] = require('fzf-lua.actions').toggle_hidden,
+                ["alt-f"] = require('fzf-lua.actions').toggle_follow,
             },
         }
 
