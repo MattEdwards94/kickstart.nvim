@@ -89,21 +89,31 @@ return {
 
         -- Keymaps for fzf-lua commands
         -- These should be defined AFTER fzf.setup()
+
+        -- Keymaps for finding files or things
         vim.keymap.set('n', '<leader>ff', fzf.files, { desc = 'Fuzzy find files' })
-        vim.keymap.set('n', '<leader>fGf', fzf.git_files, { desc = 'Git files' })
-        vim.keymap.set('n', '<leader>fGs', fzf.git_status, { desc = 'Git status' })
-        vim.keymap.set('n', '<leader>fGc', fzf.git_commits, { desc = 'Git commits' })
-        vim.keymap.set('n', '<leader>fGb', fzf.git_bcommits, { desc = 'Git buffer commits' })
-        vim.keymap.set('n', '<leader>fGv', fzf.git_branches, { desc = 'Git branches' })
         vim.keymap.set('n', '<leader>fc', function() fzf.files({ cwd = vim.fn.stdpath("config")}) end, { desc = 'Config files' })
 
+
+        -- keymaps for searching within something
+        vim.keymap.set('n', '<leader>sw', fzf.grep_cword, { desc = 'Search for word or selection in cwd' })
+        vim.keymap.set('x', '<leader>sw', fzf.grep_visual, { desc = 'Search for word or selection in cwd' })
+        vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = 'Live grep cwd' })
+        vim.keymap.set('n', '<leader>sh', fzf.manpages, { desc = 'Search help pages' })
+        vim.keymap.set('n', '<leader>sd', function() require('utils.fzf_custom').live_grep_in_selected_dir() end, { desc = 'Search specific dir' })
+
+        -- misc
+        vim.keymap.set('n', '<leader>sr', fzf.resume, { desc = 'Resume previous search' })
         vim.keymap.set('n', '<leader>sk', fzf.keymaps, { desc = 'Keymaps' })
-        vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = 'Live Grep' })
-        vim.keymap.set('n', '<leader>,', fzf.buffers, { desc = 'Fuzzy find buffers' })
-        vim.keymap.set('n', '<leader>fh', fzf.oldfiles, { desc = 'Fuzzy find history' })
-        vim.keymap.set('n', '<leader>fl', fzf.lines, { desc = 'Fuzzy find lines in current buffer' })
-        -- vim.keymap.set('n', '<leader>ft', fzf.builtin_tags, { desc = 'Fuzzy find tags' })
-        vim.keymap.set('n', '<leader>sA', function() require('utils.fzf_custom').live_grep_in_selected_dir() end, { desc = 'Search All' })
+        vim.keymap.set('n', '<leader>,', function() fzf.buffers({ sort_mru = true, sort_lastused = true}) end, { desc = 'Fuzzy find buffers' })
+
+        -- git related searching
+        vim.keymap.set('n', '<leader>fgf', fzf.git_files, { desc = 'git files' })
+        vim.keymap.set('n', '<leader>fgs', fzf.git_status, { desc = 'git status' })
+        vim.keymap.set('n', '<leader>fgc', fzf.git_commits, { desc = 'git commits' })
+        vim.keymap.set('n', '<leader>fgb', fzf.git_bcommits, { desc = 'git buffer commits' })
+        vim.keymap.set('n', '<leader>fgv', fzf.git_branches, { desc = 'git branches' })
+        vim.keymap.set('n', '<leader>fgh', fzf.git_hunks, { desc = 'git hunks' })
 
         print 'fzf-lua configuration loaded!'
     end,

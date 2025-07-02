@@ -6,7 +6,7 @@ function M.live_grep_in_selected_dir()
   local picker_start_dir = vim.fn.expand('~')
 
   require("fzf-lua").fzf_exec(
-    "fd --type d --max-depth 6 --hidden", -- This command will be run with 'picker_start_dir' as its cwd
+    "fd --type d --max-depth 6 --hidden -L", -- This command will be run with 'picker_start_dir' as its cwd
     {
       cwd = picker_start_dir, -- Set the working directory for the 'fd' command
       prompt = "Select directory to grep in > ",
