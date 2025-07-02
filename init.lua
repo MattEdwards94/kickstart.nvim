@@ -6,6 +6,8 @@ vim.g.have_nerd_font = true
 
 vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 
+vim.g.ai_cmp = true
+
 vim.opt.rtp:prepend(vim.fn.stdpath 'data' .. '/lua')
 
 require 'options'
