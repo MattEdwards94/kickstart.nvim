@@ -50,7 +50,7 @@ return {
             oldfiles = {
                 prompt = '󱂬 History > ',
             },
-            lines = {
+            blines = {
                 prompt = '󰋕 Lines > ',
             },
             git_files = {
@@ -96,6 +96,7 @@ return {
         vim.keymap.set('x', '<leader>sw', fzf.grep_visual, { desc = 'Search for word or selection in cwd' })
         vim.keymap.set('n', '<leader>sg', fzf.live_grep, { desc = 'Live grep cwd' })
         vim.keymap.set('n', '<leader>sh', fzf.manpages, { desc = 'Search help pages' })
+        vim.keymap.set('n', '<leader>sl', fzf.blines, { desc = 'Search in file with preview' })
         vim.keymap.set('n', '<leader>sd', function() require('utils.fzf_custom').live_grep_in_selected_dir() end, { desc = 'Search specific dir' })
         vim.keymap.set('n', '<leader>sn', function() require('fzf-lua').live_grep({ cwd = vim.fn.expand('~/notes') }) end, { desc = 'Grep in notes' })
         vim.keymap.set('n', '<leader>sA', function() require('fzf-lua').live_grep({ cwd = vim.fn.expand('~') }) end, { desc = 'Grep within all files under ~' })
