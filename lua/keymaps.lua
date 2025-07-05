@@ -52,9 +52,9 @@ vim.keymap.set('n', '<leader>no', '<cmd>Neorg toc<CR>', { desc = '[neorg] Open t
 vim.keymap.set('n', '<leader>ncb', 'i@code<CR>@end<Esc>kA', { desc = '[neorg] New code block' })
 vim.keymap.set('n', '<leader>ncp', 'i@code bash<CR>@end<Esc>ko<Esc>p', { desc = '[neorg] Paste as code block' })
 
-vim.keymap.set('n', '<leader>tt', 'i- ( ) ', { desc = '[neorg] New todo item' })
-vim.keymap.set('n', '<leader>td', '<Plug>(neorg.qol.todo-items.todo.task-done)', { desc = '[neorg] Mark todo done' })
-vim.keymap.set('n', '<leader>tu', '<Plug>(neorg.qol.todo-items.todo.task-undone)', { desc = '[neorg] Mark todo undone' })
+vim.keymap.set('n', '<leader>nn', 'i- ( ) ', { desc = '[neorg] New todo item' })
+vim.keymap.set('n', '<leader>nd', '<Plug>(neorg.qol.todo-items.todo.task-done)', { desc = '[neorg] Mark todo done' })
+vim.keymap.set('n', '<leader>nu', '<Plug>(neorg.qol.todo-items.todo.task-undone)', { desc = '[neorg] Mark todo undone' })
 
 -- Format whole page
 vim.keymap.set('n', 'fp', 'gg=G<C-o>', { desc = 'Format page and go back to prev location' })
@@ -68,7 +68,7 @@ vim.keymap.set('v', '<leader>aca', '<cmd>CodeCompanionChat Add<CR>', { desc = '[
 -- Terminal keymaps
 vim.keymap.set("n", "<C-t>", function() Snacks.terminal() end, { desc = "Terminal (Root Dir)" })
 vim.keymap.set("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
-vim.keymap.set('t', '<C-space>', '<C-\\><C-n><C-w>p', { desc = 'Switch back to last buffer from terminal' })
+-- vim.keymap.set('t', '<C-space>', '<C-\\><C-n><C-w>p', { desc = 'Switch back to last buffer from terminal' })
 
 -- Resize window using <ctrl> arrow keys
 vim.keymap.set('n', '<C-Up>', '<cmd>resize +4<cr>', { desc = 'Increase Window Height' })
@@ -153,3 +153,13 @@ Snacks.toggle.scroll():map('<leader>uS')
 if vim.lsp.inlay_hint then
   Snacks.toggle.inlay_hints():map('<leader>uh')
 end
+
+
+-- tmux sessionizer keymaps
+-- vim.keymap.del("n", "<C-f>") -- remove default keymap
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<M-h>", "<cmd>silent !tmux neww tmux-sessionizer -s 0<CR>")
+vim.keymap.set("n", "<M-t>", "<cmd>silent !tmux neww tmux-sessionizer -s 1<CR>")
+vim.keymap.set("n", "<M-n>", "<cmd>silent !tmux neww tmux-sessionizer -s 2<CR>")
+vim.keymap.set("n", "<M-s>", "<cmd>silent !tmux neww tmux-sessionizer -s 3<CR>")
+

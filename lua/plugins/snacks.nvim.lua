@@ -50,7 +50,7 @@ return {
     },
     -- stylua: ignore
     keys = {
-        { "<leader>n", function()
+        { "<leader>hnn", function()
             if Snacks.config.picker and Snacks.config.picker.enabled then
                 Snacks.picker.notifications()
             else
